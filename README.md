@@ -52,4 +52,9 @@ Below are the directories being updated as a part of this application:
    - token_expiry_in_days -> jwt token expiration
    - app_token -> token to authenticate signup and login apis
    - storage_host -> host for activate storage path
+## Steps to Run
 
+- `bundle install`
+- `rake db:create`
+- `rake db:migrate`
+- `rails server`
