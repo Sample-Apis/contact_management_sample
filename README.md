@@ -58,3 +58,153 @@ Below are the directories being updated as a part of this application:
 - `rake db:create`
 - `rake db:migrate`
 - `rails server`
+
+
+## API Reference
+
+#### User Signup
+
+```http
+  POST /api/users
+```
+
+**Headers**
+
+| Key | Value     
+| :-------- | :------- |
+| `Accept` | `application/vnd.cmsapi; version=1` |
+| `Authorization` | `Token token=eyJhbXXXX` |
+
+**Body (form-data)**
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `user[first_name]`      | `string` | **Required**. First name of the user |
+| `user[last_name]`      | `string` | **Required**. Last name of the user |
+| `user[email]`      | `string` | **Required**. Email of the user |
+| `user[password]`      | `string` | **Required**. Password to login |
+| `user[phone]`      | `string` | **Required**. Phone of the user |
+| `user[profile_picture]`      | `file` | Profile picture of user |
+
+<img width="1150" alt="User Signup" src="https://user-images.githubusercontent.com/12808464/228814038-737cb708-5baa-439e-94f0-da6d9d0e51d6.png">
+
+
+#### User Login
+
+```http
+  POST /api/users/sign_in
+```
+
+**Headers**
+
+| Key | Value     
+| :-------- | :------- |
+| `Accept` | `application/vnd.cmsapi; version=1` |
+| `Authorization` | `Token token=eyJhbXXXX` |
+| `Content-Type` | `application/json` |
+
+**Body**
+
+```
+{
+    "user":{
+        "email": "XXX@XXX.com",
+        "password": "XXX"
+    }
+}
+```
+<img width="1158" alt="User Login" src="https://user-images.githubusercontent.com/12808464/228814098-9dad1cf0-fb57-40a7-9498-327b8b774d6e.png">
+
+
+
+#### Upload contacts
+
+```http
+  POST /api/contact/Upload
+```
+
+**Headers**
+
+| Key | Value     
+| :-------- | :------- |
+| `Accept` | `application/vnd.cmsapi; version=1` |
+| `Authorization` | `Token token=eyJhbXXXX` |
+
+**Body (form-data)**
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `file`      | `file` | **Required**. CSV file with contact details |
+
+<img width="1163" alt="Contacts Upload" src="https://user-images.githubusercontent.com/12808464/228814151-4947fbe3-ba6f-480a-bb1b-901e72c4701c.png">
+
+
+
+#### Create a group
+
+```http
+  POST /api/groups
+```
+
+**Headers**
+
+| Key | Value     
+| :-------- | :------- |
+| `Accept` | `application/vnd.cmsapi; version=1` |
+| `Authorization` | `Token token=eyJhbXXXX` |
+| `Content-Type` | `application/json` |
+
+**Body**
+
+```
+{
+    "group": {
+        "name": "Group Name",
+        "description": "Group Description"
+    }
+}
+```
+<img width="1154" alt="Create Group" src="https://user-images.githubusercontent.com/12808464/228814223-42b63d75-58b2-4a92-8f69-1a39d7588414.png">
+
+
+
+#### Add contacts to a group
+
+```http
+  POST /api/group/:group_id/add_contacts
+```
+
+**Headers**
+
+| Key | Value     
+| :-------- | :------- |
+| `Accept` | `application/vnd.cmsapi; version=1` |
+| `Authorization` | `Token token=eyJhbXXXX` |
+| `Content-Type` | `application/json` |
+
+**Body**
+
+```
+{
+    "contacts_ids": ["1", "2"]
+}
+```
+
+<img width="1139" alt="Add Contacts to Group" src="https://user-images.githubusercontent.com/12808464/228814335-341f7bf3-2e0b-4f6a-9e4a-41c0f8b16ea3.png">
+
+
+
+#### List group contacts
+
+```http
+  POST /api/group/:group_id/list_contacts
+```
+
+**Headers**
+
+| Key | Value     
+| :-------- | :------- |
+| `Accept` | `application/vnd.cmsapi; version=1` |
+| `Authorization` | `Token token=eyJhbXXXX` |
+| `Content-Type` | `application/json` |
+
