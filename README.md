@@ -44,5 +44,12 @@ Below are the directories being updated as a part of this application:
     - contains all the migrations
 - storage
     - contains all the uploaded images/fles
-## Steps to Run
+## Update configuration
+
+- Update config/database.yml for database configuration
+- Update config/config.yml for application configuration
+   - token_secret_key -> This is used to generate jwt token for user authentication
+   - token_expiry_in_days -> jwt token expiration
+   - app_token -> token to authenticate signup and login apis
+   - storage_host -> host for activate storage path
 
