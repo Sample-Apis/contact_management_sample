@@ -119,6 +119,9 @@ Below are the directories being updated as a part of this application:
 
 #### Upload contacts
 
+***Sample Contacts CSV*** [Contact CSV](https://github.com/Sample-Apis/contact_management_sample/blob/master/Contact.csv)
+
+
 ```http
   POST /api/contact/Upload
 ```
@@ -173,8 +176,6 @@ Below are the directories being updated as a part of this application:
 ```http
   POST /api/group/:group_id/add_contacts
 ```
-
-***Sample Contacts CSV*** [a link](https://github.com/Sample-Apis/contact_management_sample/blob/master/Contact.csv)
 
 **Headers**
 
