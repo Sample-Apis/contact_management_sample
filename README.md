@@ -174,6 +174,8 @@ Below are the directories being updated as a part of this application:
   POST /api/group/:group_id/add_contacts
 ```
 
+***Sample Contacts CSV*** [a link](https://github.com/Sample-Apis/contact_management_sample/blob/master/Contact.csv)
+
 **Headers**
 
 | Key | Value     
@@ -208,3 +210,12 @@ Below are the directories being updated as a part of this application:
 | `Authorization` | `Token token=eyJhbXXXX` |
 | `Content-Type` | `application/json` |
 
+## 🚀 About Me
+I'm a full stack developer working on Ruby on Rails since last 10 years
+
+
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
